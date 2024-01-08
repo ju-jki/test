@@ -8,6 +8,7 @@ pipeline {
         scannerHome = tool 'SonarQubeScanner'
 
         APP_NAME = 'test'
+        ENV = 'sit'
     }
 
     stages {
