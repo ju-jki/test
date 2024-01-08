@@ -44,7 +44,7 @@ pipeline {
 
         stage('Start docker'){
             steps {
-                sh "docker run -p 8080:80 ${APP_NAME}"
+                sh "docker run -p 8081:80 ${APP_NAME}:${TAG}"
             }
         }
     }
