@@ -36,11 +36,12 @@ pipeline {
                 sh "echo build...${ENV} with v${TAG}"
                 sh "echo 'TAG=${env.version}'>>.env"
                 sh 'chmod 777 Dockerfile'
-                sh "docker build -t ${APP_NAME}:${env.version} -f Dockerfile ."
+                // sh "docker build -t ${APP_NAME}:${env.version} -f Dockerfile ."
+                sh "docker build -t ${APP_NAME}:${TAG} -f Dockerfile ."
             }
         }
 
-        stage('Run docker-compose'){
+        stage('Start docker'){
             steps {
                 sh "docker run -p 8080:80 ${APP_NAME}"
             }
