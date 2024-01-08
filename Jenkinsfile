@@ -45,7 +45,7 @@ pipeline {
         stage('Start docker'){
             steps {
                 // sh "docker run -p 8081:80 ${APP_NAME}:${TAG}"
-                sh 'docker-compose up -d'
+                sh 'sudo docker-compose up -d'
             }
         }
     }
