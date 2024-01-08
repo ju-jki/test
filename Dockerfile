@@ -23,6 +23,6 @@ FROM nginx:alpine
 # Copy build files to Nginx
 COPY --from=build /usr/src/app/build /usr/share/nginx/html
 # COPY --from=build /app/nginx/nginx.conf /etc/nginx/conf.d/default.conf
-COPY --from=build-stage /nginx.conf /etc/nginx/c
+COPY nginx/default.conf /etc/nginx/conf.d/
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
