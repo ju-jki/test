@@ -1,0 +1,11 @@
+version: "2"
+services:
+  test-react:
+    container_name: test-react
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+    - 81:80
+    environment:
+      NODE_ENV: production
