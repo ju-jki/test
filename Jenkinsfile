@@ -9,6 +9,7 @@ pipeline {
 
         APP_NAME = 'test'
         ENV = 'sit'
+        TAG = '0.1.0'
     }
 
     stages {
@@ -22,16 +23,16 @@ pipeline {
         //     }
         // }
 
-        stage('Read version') {
-            steps {
-                script {
-                    def props = readJSON file: "/var/jenkins_home/workspace/${APP_NAME}/package.json"
-                    env.version = props.version
-                    sh "echo ${env.version}"
-                    sh "echo 'TAG=${env.version}'>>.env"
-                }
-            }
-        }
+        // stage('Read version') {
+        //     steps {
+        //         script {
+        //             def props = readJSON file: "/var/jenkins_home/workspace/${APP_NAME}/package.json"
+        //             env.version = props.version
+        //             sh "echo ${env.version}"
+        //             sh "echo 'TAG=${env.version}'>>.env"
+        //         }
+        //     }
+        // }
 
         stage('Build Docker Image') {
             steps {
