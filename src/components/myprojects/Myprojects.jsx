@@ -1,20 +1,14 @@
-import React from 'react'
-import './myprojects.css'
-import IMG1 from '../../assets/img5.jpg'
-import IMG2 from '../../assets/img2.png'
-import IMG3 from '../../assets/img3.png'
-import IMG4 from '../../assets/img4.png'
+import React from "react";
+import "./myprojects.css";
 
 const Myprojects = () => {
   return (
-    <section id='myprojects'>
-
+    <section id="myprojects">
       <h5>My Recent Works</h5>
       <h2>Projects</h2>
 
-      <div className="container portfolio__container">
-
-        <article className='portfolio__item'>
+      {/* <div className="container portfolio__container"> */}
+      {/* <article className='portfolio__item'>
             <div className="portfolio__item-image">
                 <img src={IMG1} alt="" />
             </div>
@@ -59,10 +53,10 @@ const Myprojects = () => {
               <a href="https://thakshila-bandara.github.io/my-resume/" target="_blank" rel='noreferrer' className='btn btn-primary'>Visit Website</a>  
             </div>
             
-        </article>
-      </div>
+        </article> */}
+      {/* </div> */}
     </section>
-  )
-}
+  );
+};
 
-export default Myprojects
+export default Myprojects;
