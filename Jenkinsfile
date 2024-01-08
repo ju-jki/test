@@ -28,6 +28,7 @@ pipeline {
                     def props = readJSON file: "/var/jenkins_home/workspace/${APP_NAME}/package.json"
                     env.version = props.version
                     sh "echo ${env.version}"
+                    sh "echo 'TAG=${env.version}'>.env"
                 }
             }
         }
@@ -35,9 +36,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 sh "echo build...${ENV} with v${TAG}"
-                sh "echo 'TAG=${env.version}'>>.env"
                 sh 'chmod 777 Dockerfile'
-                // sh "docker build -t ${APP_NAME}:${env.version} -f Dockerfile ."
                 sh "docker build -t ${APP_NAME}:${TAG} -f Dockerfile ."
             }
         }
