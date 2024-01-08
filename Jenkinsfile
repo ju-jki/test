@@ -12,17 +12,17 @@ pipeline {
     }
 
     stages {
-        stage('Sonarqube Scanner') {
-            steps {
-                withSonarQubeEnv('sonarqube') {
-                    sh "echo ${scannerHome}"
-                    sh "${scannerHome}/bin/sonar-scanner -X"
-                    sh 'echo Scanned'
-                }
-            }
-        }
+        // stage('Sonarqube Scanner') {
+        //     steps {
+        //         withSonarQubeEnv('sonarqube') {
+        //             sh "echo ${scannerHome}"
+        //             sh "${scannerHome}/bin/sonar-scanner -X"
+        //             sh 'echo Scanned'
+        //         }
+        //     }
+        // }
 
-        stage('Read package.json Configuration') {
+        stage('Read version') {
             steps {
                 script {
                     def props = readJSON file: "/var/jenkins_home/workspace/${APP_NAME}/package.json"
