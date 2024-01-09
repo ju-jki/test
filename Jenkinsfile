@@ -10,15 +10,15 @@ pipeline {
     }
 
     stages {
-        // stage('Sonarqube Scanner') {
-        //     steps {
-        //         withSonarQubeEnv('sonarqube') {
-        //             sh "echo ${scannerHome}"
-        //             sh "${scannerHome}/bin/sonar-scanner -X"
-        //             sh 'echo Scanned'
-        //         }
-        //     }
-        // }
+        stage('Sonarqube Scanner') {
+            steps {
+                withSonarQubeEnv('sonarqube') {
+                    sh "echo ${scannerHome}"
+                    sh "${scannerHome}/bin/sonar-scanner -X"
+                    sh 'echo Scanned'
+                }
+            }
+        }
 
         // stage('Read version') {
         //     steps {
@@ -41,7 +41,8 @@ pipeline {
 
         stage('Start docker') {
             steps {
-                sh "docker stop ${APP_NAME} && docker rm -f ${APP_NAME} || true"
+                sh "docker stop ${APP_NAME} || true"
+                sh "docker rm -f ${APP_NAME} || true"
                 // Detached Mode (-d option) เพื่อรัน process ใน background 
                 sh "docker run -d -p 8081:80 --name ${APP_NAME} ${APP_NAME}:${TAG}"
             }
