@@ -7,7 +7,7 @@ pipeline {
     environment {
         scannerHome = tool 'SonarQubeScanner'
 
-        APP_NAME = 'test'
+        APP_NAME = 'test-my-portfolio'
         ENV = 'sit'
         TAG = '0.1.0'
     }
@@ -42,7 +42,7 @@ pipeline {
             }
         }
 
-        stage('Start docker'){
+        stage('Start docker') {
             steps {
                 sh "docker run -p 8081:80 ${APP_NAME}:${TAG}"
             }
