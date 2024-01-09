@@ -1,60 +1,38 @@
 import React from "react";
+import IMG3 from "../../assets/EM-Lab-Certificate.webp";
+import IMG4 from "../../assets/IYTA-Certificate.webp";
+import IMG2 from "../../assets/Julius_Cert.webp";
 import "./myprojects.css";
 
 const Myprojects = () => {
   return (
     <section id="myprojects">
-      <h5>My Recent Works</h5>
-      <h2>Projects</h2>
+      <h5>My Recent Certificates</h5>
+      <h2>Certificates</h2>
 
-      {/* <div className="container portfolio__container"> */}
-      {/* <article className='portfolio__item'>
-            <div className="portfolio__item-image">
-                <img src={IMG1} alt="" />
-            </div>
-            <h3>Fashion Gallery</h3>
-            <small className='text-light'>Spring Boot | ReactJs | MySQL</small>
-            <div className="portfolio__item-cta">
-              <a href="https://github.com/himani413/FashionGallery" target="_blank" rel='noreferrer' className='btn'>Github</a>
-            </div>
-              
+      <div className="container portfolio__container">
+        <article className="portfolio__item">
+          <div className="portfolio__item-image">
+            <img src={IMG2} alt="" />
+          </div>
+          <h3>Certificate 1</h3>
+          <small className="text-light">Certificado</small>
         </article>
-        <article className='portfolio__item'>
-            <div className="portfolio__item-image">
-                <img src={IMG2} alt="" />
-            </div>
-            <h3>Beauty Garden</h3>
-            <small className='text-light'>HTML | CSS | JS | php | MySQL</small>
-            <div className="portfolio__item-cta">
-              <a href="https://github.com/Thakshila-Bandara/Beauty-Garden" target="_blank" rel='noreferrer' className='btn'>Github</a>  
-            </div>
-            
+        <article className="portfolio__item">
+          <div className="portfolio__item-image">
+            <img src={IMG4} alt="" />
+          </div>
+          <h3>Certificate 2</h3>
+          <small className="text-light">Certificate of attendance</small>
         </article>
-        <article className='portfolio__item'>
-            <div className="portfolio__item-image">
-                <img src={IMG4} alt="" />
-            </div>
-            <h3>My Portfolio(This website)</h3>
-            <small className='text-light'>ReactJs</small>
-            <div className="portfolio__item-cta">
-              <a href="https://github.com/Thakshila-Bandara/my-portfolio" target="_blank" rel='noreferrer' className='btn'>Github</a>
-              <a href="https://thakshila-bandara.github.io/my-portfolio/" target="_blank" rel='noreferrer' className='btn btn-primary'>Visit Website</a>  
-            </div>
-            
+        <article className="portfolio__item">
+          <div className="portfolio__item-image">
+            <img src={IMG3} alt="" />
+          </div>
+          <h3>Certificate 3</h3>
+          <small className="text-light">Completion</small>
         </article>
-        <article className='portfolio__item'>
-            <div className="portfolio__item-image">
-                <img src={IMG3} alt="" />
-            </div>
-            <h3>My Resume</h3>
-            <small className='text-light'>HTML | CSS | JS | Bootstrap</small>
-            <div className="portfolio__item-cta">
-              <a href="https://github.com/Thakshila-Bandara/my-resume" target="_blank" rel='noreferrer' className='btn'>Github</a>
-              <a href="https://thakshila-bandara.github.io/my-resume/" target="_blank" rel='noreferrer' className='btn btn-primary'>Visit Website</a>  
-            </div>
-            
-        </article> */}
-      {/* </div> */}
+      </div>
     </section>
   );
 };
