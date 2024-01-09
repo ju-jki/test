@@ -1,8 +1,5 @@
 pipeline {
     agent any
-    tools {
-        nodejs 'node18.13.0'
-    }
 
     environment {
         scannerHome = tool 'SonarQubeScanner'
@@ -44,7 +41,9 @@ pipeline {
 
         stage('Start docker') {
             steps {
-                sh "docker run -d -p 8081:80 ${APP_NAME}:${TAG}"
+                sh "docker stop ${APP_NAME} && docker rm -f ${APP_NAME} || true"
+                // Detached Mode (-d option) เพื่อรัน process ใน background 
+                sh "docker run -d -p 8081:80 --name ${APP_NAME} ${APP_NAME}:${TAG}"
             }
         }
     }
