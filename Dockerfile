@@ -1,13 +1,14 @@
-FROM node:16-alpine AS build
+FROM node:16.15-alpine AS builder
+ENV NODE_ENV production
 WORKDIR /app
-COPY package*.json /app
+COPY package* /app/
 RUN yarn
 COPY . .
 RUN yarn build
 
-FROM nginx:stable-alpine
-COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
-COPY --from=build /app/build /usr/share/nginx/html
-# WORKDIR /usr/share/nginx/html
+FROM nginx:1.21.0-alpine AS production
+ENV NODE_ENV production
+COPY --from=builder  /app/build /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
