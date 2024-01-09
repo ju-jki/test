@@ -43,7 +43,8 @@ pipeline {
             steps {
                 sh "docker stop ${APP_NAME} || true"
                 sh "docker rm -f ${APP_NAME} || true"
-                // Detached Mode (-d option) เพื่อรัน process ใน background 
+                // Detached Mode (-d option) for running background
+                // --name for assign specify name
                 sh "docker run -d -p 8081:80 --name ${APP_NAME} ${APP_NAME}:${TAG}"
             }
         }
