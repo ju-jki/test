@@ -20,17 +20,6 @@ pipeline {
             }
         }
 
-        // stage('Read version') {
-        //     steps {
-        //         script {
-        //             def props = readJSON file: "/var/jenkins_home/workspace/${APP_NAME}/package.json"
-        //             env.version = props.version
-        //             sh "echo ${env.version}"
-        //             sh "echo 'TAG=${env.version}'>>.env"
-        //         }
-        //     }
-        // }
-
         stage('Build Docker Image') {
             steps {
                 sh "echo build...${ENV} with v${TAG}"
