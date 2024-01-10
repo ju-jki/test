@@ -19,7 +19,7 @@
 2. Go to project folder
 
     ```bash
-    cd my-portfolio
+    cd test
     ```
 
 3. Set up environment by command
