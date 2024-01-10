@@ -11,18 +11,13 @@
 ## ⚙ Get Started
 
 1. Clone project
-
-    ```bash
-    git clone https://upanda.baac.tech/kantaporn.it/test.git
-    ```
-
-2. Go to project folder
+Go to the project folder
 
     ```bash
     cd test
     ```
 
-3. Set up environment by command
+3. Set up the environment by command
 
     ```bash
     # Yarn
@@ -32,7 +27,7 @@
     npm install
     ```
 
-4. Run project by command
+4. Run the project by command
 
     ```bash 
     # Start dev server with yarn
